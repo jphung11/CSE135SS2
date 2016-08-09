@@ -1,9 +1,23 @@
 robots.txt : We weren't sure what robots we were supposed to allow/disallow,
-so we disallowed all robots. 
+so we disallowed all robots. The resulting file is in the root directory 
+(/var/www/html).
+
+Logging configuration and report: By default, Apache has logging enabled and
+the logs are stored in /var/log/apache2. We took the access.log and imported
+it into a log analyzer and exported the log as an .html file. The resulting
+file is the bottom link on our website labeled "Link to Apache log." 
+
+Compression configuration and summary: We enabled compression by enabling the
+mod_deflate module and overriding its configuration through our .htaccess. 
+For reference, here are some stats of what compression did for a few of our web
+pages.
+
+index.html - Original size: 1603 B, Compressed size: 622 B
+error_403.html - Original size: 532 B, Compressed size: 305 B  
 
 Server header removal: Due to Apache's design decision, the only way to remove
 the server header completely is to edit the source code. Therefore, we have
-use the mod_security module to remove the server signature and edit the 
+used the mod_security module to remove the server signature and edit the 
 header to contain ' '. 
 
 Quoted post from https://bz.apache.org/bugzilla/show_bug.cgi?id=40026
@@ -13,6 +27,10 @@ development community decides otherwise on the dev@httpd mailing list.
 Feel free to provide your input there.  (Personally, I've lost count of the
 different ways I have patched different versions of httpd to remove the 
 server header.  :(  )
+
+URL Rewriting: We enabled re-writing for .html and .php files. We did this 
+by turning on mod_rewrite module and inserting RewriteCond and RewriteRule in
+our .htaccess file located in the root directory. 
 
 Extra masking of PHP: We removed the "X-Powered-By" header by adding an 
 'expose_php = off' line in the PHP.ini. This hides the version of PHP we are
