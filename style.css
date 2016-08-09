@@ -68,7 +68,7 @@ td {
     text-align: center;
 }
 
-#forbidLink1, #forbidLink2, #log_output {
+a {
     color: white;
     font-weight: bold;
 }
