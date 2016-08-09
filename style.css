@@ -6,7 +6,7 @@ table {
     border-collapse: collapse;
 }
 
-#team, #siteTitle {
+#team, #siteTitle, #siteTitle1 {
     font-family: "Times New Roman", Times, serif;
     color: white;
     font-style: oblique;
