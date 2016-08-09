@@ -1,0 +1,20 @@
+robots.txt : We weren't sure what robots we were supposed to allow/disallow,
+so we disallowed all robots. 
+
+Server header removal: Due to Apache's design decision, the only way to remove
+the server header completely is to edit the source code. Therefore, we have
+use the mod_security module to remove the server signature and edit the 
+header to contain ' '. 
+
+Quoted post from https://bz.apache.org/bugzilla/show_bug.cgi?id=40026
+Jeff Trawick     2014-02-19 17:30:36 UTC  
+Please do not reopen the bug.  WONTFIX is the proper status until the 
+development community decides otherwise on the dev@httpd mailing list. 
+Feel free to provide your input there.  (Personally, I've lost count of the
+different ways I have patched different versions of httpd to remove the 
+server header.  :(  )
+
+Extra masking of PHP: We removed the "X-Powered-By" header by adding an 
+'expose_php = off' line in the PHP.ini. This hides the version of PHP we are
+running in our HTTP response. 
+
