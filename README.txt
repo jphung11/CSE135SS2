@@ -7,7 +7,7 @@ Username: teamyay
 Password: cowsarecool
 
 Quick grader info:
-On the website, there are links to test the 403 custom error page below the table with the team information. In addition, there is a link to look at our log analysis and a link to our Github. To test the 404 custom error page, you are able to use any random string to access it by adding that string into the URL. For example, http://138.68.48.65/jafhdauhf .
+On the website, there are links to test the 403 custom error page below the table with the team information. In addition, there is a link to look at our log analysis and a link to our Github. To test the 404 custom error page, you are able to use any random string to access it by adding that string into the URL. For example, http://138.68.48.65/jafhdauhf . The links will be better described in the explanations below.
 
 Explanation of each task done for HW1:
 - Password protect: We have added a username/password combo into an .htpasswd file within the directory /etc/etc/apache2. The username is teamyay and the password is cowsarecool. In order to implement this combo and configure the Apache password authentification, I added code that will restrict directory access to the root within the default config file.
