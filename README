@@ -1,3 +1,15 @@
+CSE 135 Homework 1
+
+URL: http://138.68.48.65/
+
+Website Authentification:
+Username: teamyay
+Password: cowsarecool
+
+Quick grader info:
+On the website, there are links to test the 403 custom error page below the table with the team information. In addition, there is a link to look at our log analysis and a link to our Github. To test the 404 custom error page, you are able to use any random string to access it by adding that string into the URL. For example, http://138.68.48.65/jafhdauhf .
+
+Explanation of each task done for HW1:
 - Password protect: We have added a username/password combo into an .htpasswd file within the directory /etc/etc/apache2. The username is teamyay and the password is cowsarecool. In order to implement this combo and configure the Apache password authentification, I added code that will restrict directory access to the root within the default config file.
 
 - Status page: We created a status page that indicates the name, email, and PID of our team members with a "Rick and Morty" theme. We employed HTML5 within our index.html and replaced the default index.html in /var/www/html. We also employed CSS by changing the look of our headers and tables as well as centering the image. We then validated our status page by checking the html with http://validator.w3.org.
@@ -10,7 +22,7 @@ robots.txt : We weren't sure what robots we were supposed to allow/disallow,
 so we disallowed all robots. The resulting file is in the root directory 
 (/var/www/html).
 
-- Deploy from Github: To deploy from Github, we used Codeship.io. We made an account, connected our Github repository and configured tests in a java environment that should be run before deploying the changes to the web sever. For our test set up and tests, we install java and had it run the html validator for our html files. Then we set up the deployment by adding an ssh key authorization and using custom script. In our custom script, we used scp to clone the tested repository into our root html directory. As a result, any changes we make will be deployed after being committed and tested by our tests.
+- Deploy from Github: To deploy from Github, we used Codeship.io. We made an account, connected our Github repository and configured tests in a java environment that should be run before deploying the changes to the web sever. For our test set up and tests, we install java and had it run the html validator for our html files. Then we set up the deployment by adding an ssh key authorization and using custom script. In our custom script, we used scp to clone the tested repository into our root html directory. As a result, any changes we make will be deployed after being committed and tested by our tests. To check our Github repositorywe have a link on our website that says "Link to our GitHub."
 
 Logging configuration and report: By default, Apache has logging enabled and
 the logs are stored in /var/log/apache2. We took the access.log and imported
