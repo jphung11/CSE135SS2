@@ -4,38 +4,26 @@
 
 print "Content-type: text/html\n\n"; 
 
-@months = qw( Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec );
-@days = qw(Sun Mon Tue Wed Thu Fri Sat Sun);
 $localtime = localtime();
 $rand = int rand(3);
 
-if ($rand == 0) {
 print << "EOF"; 
+<HTML>
+
+<HEAD>
 <STYLE>
 	body {
 		background-color: red;
 	}
 </STYLE>
-EOF
-}
+<TITLE>Hello, world!</TITLE>
+</HEAD>
 
-if ($rand == 1) {
-print << "EOF"; 
-<STYLE>
-	body {
-		background-color: white;
-	}
-</STYLE>
-EOF
-}
+<BODY>
+<H1>Hello, world!</H1>
+</BODY>
 
-if ($rand == 2) {
-print << "EOF"; 
-<STYLE>
-	body {
-		background-color: blue;
-	}
-</STYLE>
+</HTML>
 EOF
 }
 
