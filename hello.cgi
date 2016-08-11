@@ -6,26 +6,17 @@ print "Content-type: text/html\n\n";
 
 $localtime = localtime();
 $rand = int rand(3);
-
-print << "EOF"; 
-<HTML>
-
-<HEAD>
-<STYLE>
-	body {
-		background-color: red;
-	}
-</STYLE>
-<TITLE>Hello, world!</TITLE>
-</HEAD>
-
-<BODY>
-<H1>Hello, world!</H1>
-</BODY>
-
-</HTML>
-EOF
-}
-
 print "Hello Web World from Language Perl on $localtime\n";
+if ($rand == 0) {
+	print "<STYLE>body{background-color: red;}</STYLE>";
+} 
+elsif ($rand == 1) {
+	print "<STYLE>body{background-color: white;}</STYLE>";
+} 
+else {
+	print "<STYLE>body{background-color: blue;}</STYLE>";
+} 
+
+
+
 
