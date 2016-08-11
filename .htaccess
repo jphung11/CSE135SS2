@@ -45,3 +45,11 @@ RewriteRule ^ %1 [R,L,NC]
 RewriteCond %{REQUEST_FILENAME}.php -f [NC]
 RewriteRule ^ %{REQUEST_URI}.php [L]
 
+#Externally redir *.cgi to *
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.cgi [NC]
+RewriteRule ^ %1 [R,L,NC]
+
+#Internally redirect * to *.cgi
+RewriteCond %{REQUEST_FILENAME}.cgi -f [NC]
+RewriteRule ^ %{REQUEST_URI}.cgi [L]
+
