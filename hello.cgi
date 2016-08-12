@@ -27,10 +27,10 @@ if ($rand == 0) {
 	
 } 
 elsif ($rand == 1) {
-	print "<STYLE>body{background-color: white;}</STYLE>";
+print "<STYLE>body{background-color: white;}</STYLE>";
 } 
 else {
-	print "<STYLE>body{background-color: blue;}</STYLE>";
+print "<STYLE>body{background-color: blue;}</STYLE>";
 } 
 
 
