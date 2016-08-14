@@ -13,12 +13,12 @@ body {background-color: red;}
 </HEAD>
 
 <BODY>
-<form>
+<FORM>
   First name:<br>
   <input type="text" name="firstname"><br>
   Last name:<br>
   <input type="text" name="lastname">
-</form> 
+</FORM> 
 </BODY>
 
 </HTML>
