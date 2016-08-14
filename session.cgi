@@ -1,7 +1,5 @@
 #!/usr/bin/perl 
-use CGI qw(:standard);
-use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
-use strict;
+use CGI qw(:cgi-lib :standard);
 
 print header;
 
