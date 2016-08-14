@@ -5,14 +5,25 @@ use strict;
 
 print header;
 
+print "Content-type: text/html\n\n"; 
 
-read(STDIN,$form_info,$ENV('CONTENT_LENGTH'));
-($field_name,$name) = split (/=/, $form_info);
+$ReadParse(%in); 
 
+$name = $in("name");
 
-print start_html(-title => "Session Page 2",
-				 -style => {-src=>'style.css'},);
+print << "EOF";
+<HTML>
 
-	print "<h1>Hello $name, nice to meet you!</h1>";
-	
-print end_html;
+<HEAD>
+<TITLE>Session Page 2</TITLE>
+<STYLE>
+<link rel="stylesheet" href="style.css" type="text/css">
+</STYLE>
+</HEAD>
+
+<BODY>
+<H1>Hello $name, nice to meet you!\n</H1>
+</BODY>
+
+</HTML>
+EOF
