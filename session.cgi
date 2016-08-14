@@ -12,6 +12,6 @@ my %form;
  #   $form{$p} = param($p);
   #  print "$p = $form{$p}<br>\n";
 #}
-print "<h1>Hi $form{'name'} nice to meet you!</h1>"
+print "<h1>Hi $form{'name'} nice to meet you!</h1>";
 
 print end_html;
