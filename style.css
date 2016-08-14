@@ -2,6 +2,19 @@ body {
     background-image: url(messy-galaxy-hubble-1600.jpg);
 }
 
+a {
+    color: white;
+    font-weight: bold;
+}
+
+form {
+    color: white;
+}
+
+h1 { 
+    color: white;
+ }
+ 
 table {
     border-collapse: collapse;
 }
@@ -68,7 +81,3 @@ td {
     text-align: center;
 }
 
-a {
-    color: white;
-    font-weight: bold;
-}
