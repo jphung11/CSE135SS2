@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<script type="text/javascript">
+function get_action(form) {
+if(form.method == 'post')
+{
+form.action = "echo_php_post";
+}
+else
+{
+form.action = "echo_php_get";
+}
+}
+</script>
+
+<html>
+
+<head>
+<title>Form Collect PHP</title>
+<style>
+body { background-color: lightgray;}
+</style>
+</head>
+
+<body>
+<form id="form_id" action="echo_php_post" method="get" name="form_collect" onsubmit="get_action(this);">
+<p>First Name:
+<input type="text" name="first" />
+</p>
+<p>Last Name:
+ <input type="text" name="last" />
+</p>
+<p>Favorite Color:
+<select name="color" id="color" SIZE=1>
+<option value="RED">Red</option>
+<option value="BLUE">Blue</option>
+<option value="GREEN">Green</option>
+<option value="ORANGE">Orange</option>
+<option value="PINK">Pink</option>
+<option value="PURPLE">Purple</option>
+<option value="cadetblue">Cadet Blue</option>
+</select>
+</p>
+<p>Method: <select id="methodchoice" name="methodselector" onchange="this.form.method = this.options[selectedIndex].value; ">
+<option>GET</option>
+<option>POST</option>
+</select>
+</p>
+<p>
+<input type="submit" name="submit" id="submit" value="Submit" />
+</p>
+</form>
+
+</body>
+</html>
