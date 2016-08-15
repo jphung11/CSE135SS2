@@ -21,7 +21,7 @@ print << "EOF";
 </HEAD>
 
 <BODY>
-<h1>Hello $name, nice to meet you!</h1> 
+<h1>Hi $name nice to meet you!</h1> 
 </BODY>
 
 </HTML>

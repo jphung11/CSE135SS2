@@ -1,11 +1,4 @@
 <!DOCTYPE html> 
-<?php
-	session_start();
-	$_SESSION['username'] = $_POST['name']; 
-	$users_name = $_SESSION['username'];
-	setcookie($users_name,' ',time()+86400); 
-	
-?>
 <html>
 	<head>
 	    <meta charset="utf-8">
@@ -20,7 +13,7 @@
 	</head>
 	<body>
 		<h1>Please enter your name in the box</h1>
-		<form action="" method="POST">
+		<form action="start_session_php" method="POST">
 		 	Your name: <input type=text name="name"><br>
 		 	<input type="submit" value="Submit">
 		</form>
