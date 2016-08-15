@@ -22,7 +22,7 @@ else {
 } 
 echo "<h1>Please for the love of god work</h1>";
 ?>
-<a href="sessionpage1_PHP.php">Back to page one</a>
+<a href="sessionpage1_PHP.html">Back to page one</a><br>
 <a href="delete_session_php.php">Clear Session</a>
 </body>
 </html>
