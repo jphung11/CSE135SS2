@@ -1,14 +1,12 @@
 #!/usr/bin/perl 
 use CGI qw(:cgi-lib :standard);
 use CGI::Cookie;
-use CGI;
 
-# Hello world 
-$baker = new CGI; 
-$do_you_haz_cookie = $baker->cookie('DA_BEST_COOKIE_EVA');
-if ($do_you_haz_cookie) { 
-	$users_name = $do_you_haz_cookie->value;
-	$output_msg = 'Hi $users_name nice to meet you';
+%do_you_haz_cookie = CGI::Cookie->fetch;
+$da_cookie = $do_you_haz_cookie{'DA_BEST_COOKIE_EVA'};
+if ($da_cookie) { 
+	$users_name = $da_cookie->value;
+	$output_msg = "Hi $users_name nice to meet you";
 }
 else {
 	$output_msg = "Howdy stranger...tell me your name on page1!";
@@ -16,7 +14,7 @@ else {
 
 print "Content-type: text/html\n\n"; 
 
-
+print << "EOF";
 <HTML>
 
 <HEAD>
@@ -37,4 +35,3 @@ print "Content-type: text/html\n\n";
 
 </HTML>
 EOF
-
