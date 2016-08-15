@@ -5,7 +5,7 @@ use CGI qw(:cgi-lib :standard);
 print "Content-type: text/html\n\n";
 
 &ReadParse(%in);
-
+$datestring = localtime();
 $first = $in{"first"};
 $last = $in{"last"};
 $color = $in{"color"};
@@ -21,7 +21,7 @@ body {background-color: $color;}
 </HEAD>
 
 <BODY>
-<H2>Hello $first $last from a Web app written in CGI with Perl on $localtime\n</H2>
+<H2>Hello $first $last from a Web app written in CGI with Perl on $datestring\n</H2>
 </BODY>
 
 </HTML>

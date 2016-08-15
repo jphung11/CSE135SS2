@@ -4,20 +4,20 @@
 $datestring = localtime();
 print "Content-type: text/html\n\n"; 
 if ($rand == 0) {
-	
+$color = "red";
 } 
 elsif ($rand == 1) {
-print "<STYLE>body{background-color: white;}</STYLE>";
+$color = "white";
 } 
 else {
-print "<STYLE>body{background-color: blue;}</STYLE>";
+$color = "blue";
 } 
 print << "EOF";
 <HTML>
 
 <HEAD>
 <STYLE>
-
+body {background-color: $color;}
 </STYLE>
 <TITLE>Hello, world!</TITLE>
 </HEAD>
