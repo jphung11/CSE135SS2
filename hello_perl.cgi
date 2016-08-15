@@ -2,7 +2,7 @@
 
 # Hello world 
 $datestring = localtime();
-$random = rand(0,2);
+$rand = rand(3);
 print "Content-type: text/html\n\n"; 
 
 print << "EOF";
@@ -22,10 +22,10 @@ print << "EOF";
 </HTML>
 EOF
 
-if ($random == 0) {
+if ($rand == 0) {
 print "<STYLE>body{background-color: red;}</STYLE>";
 } 
-elsif ($random == 1) {
+elsif ($rand == 1) {
 print "<STYLE>body{background-color: white;}</STYLE>";
 } 
 else {
