@@ -2,22 +2,15 @@
 
 # Hello world 
 $datestring = localtime();
+$rand = rand(3);
 print "Content-type: text/html\n\n"; 
-if ($rand == 0) {
-$color = "red";
-} 
-elsif ($rand == 1) {
-$color = "white";
-} 
-else {
-$color = "blue";
-} 
+
 print << "EOF";
 <HTML>
 
 <HEAD>
 <STYLE>
-body {background-color: $color;}
+
 </STYLE>
 <TITLE>Hello, world!</TITLE>
 </HEAD>
@@ -28,3 +21,13 @@ body {background-color: $color;}
 
 </HTML>
 EOF
+
+if ($rand == 0) {
+print "<STYLE>body{background-color: red;}</STYLE>";
+} 
+elsif ($rand == 1) {
+print "<STYLE>body{background-color: white;}</STYLE>";
+} 
+else {
+print "<STYLE>body{background-color: blue;}</STYLE>";
+} 
