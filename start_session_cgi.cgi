@@ -7,7 +7,6 @@ use CGI::Cookie;
 
 $users_name = $in{"name"};
 
-#create CGI object 
 
 #Create and send cookie
 $cookie_name = 'DA_BEST_COOKIE_EVA';

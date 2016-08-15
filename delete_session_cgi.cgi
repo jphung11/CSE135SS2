@@ -7,7 +7,6 @@ $da_cookie = $do_you_haz_cookie{'DA_BEST_COOKIE_EVA'};
 if ($da_cookie) { 
 	$da_cookie->expires('-1d');
 	$da_cookie->value(' ');
-	#$da_cookie->bake;
 }
 
 print redirect(-url=>'sessionpage2_CGI', -cookie=>$da_cookie);
