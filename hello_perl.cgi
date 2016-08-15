@@ -2,7 +2,7 @@
 
 # Hello world 
 $datestring = localtime();
-$rand = rand(3);
+$rand = rand(0,2);
 print "Content-type: text/html\n\n"; 
 
 print << "EOF";
