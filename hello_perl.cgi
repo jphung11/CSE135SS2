@@ -3,7 +3,15 @@
 # Hello world 
 $datestring = localtime();
 print "Content-type: text/html\n\n"; 
-
+if ($rand == 0) {
+	
+} 
+elsif ($rand == 1) {
+print "<STYLE>body{background-color: white;}</STYLE>";
+} 
+else {
+print "<STYLE>body{background-color: blue;}</STYLE>";
+} 
 print << "EOF";
 <HTML>
 
@@ -20,13 +28,3 @@ print << "EOF";
 
 </HTML>
 EOF
-
-if ($rand == 0) {
-	
-} 
-elsif ($rand == 1) {
-print "<STYLE>body{background-color: white;}</STYLE>";
-} 
-else {
-print "<STYLE>body{background-color: blue;}</STYLE>";
-} 
