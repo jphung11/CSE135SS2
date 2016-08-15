@@ -1,7 +1,7 @@
 #!/usr/bin/perl 
 
 # Hello world 
-
+$datestring = localtime();
 print "Content-type: text/html\n\n"; 
 
 print << "EOF";
@@ -15,7 +15,7 @@ print << "EOF";
 </HEAD>
 
 <BODY>
-<H1>Hello Web World from Language Perl on $localtime\n</H1>
+<H1>Hello Web World from Language Perl on $datestring\n</H1>
 </BODY>
 
 </HTML>
