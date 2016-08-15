@@ -22,13 +22,14 @@ EOT;
 	else {
 		session_start();
 		$_SESSION["name"] = $_POST["name"];
-		$name = $_SESSION["name"];
+		$username = $_SESSION["name"];
 		setcookie($name, "poop",time()+86400);
 		echo <<< EOT
-			<h1>Hi $name nice to meet you</h1>
+			<h1>Hi $username nice to meet you</h1>
 EOT;	
 	}
 } 
+echo "Please for the love of god work"
 ?>
 <a href="sessionpage1_PHP.php">Back to page one</button>
 </body>
