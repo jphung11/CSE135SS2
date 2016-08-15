@@ -4,14 +4,12 @@
 
 print "Content-type: text/html\n\n"; 
 
-$localtime = localtime();
-$rand = int rand(3);
 print << "EOF";
 <HTML>
 
 <HEAD>
 <STYLE>
-body {background-color: red;}
+
 </STYLE>
 <TITLE>Hello, world!</TITLE>
 </HEAD>
@@ -32,7 +30,3 @@ print "<STYLE>body{background-color: white;}</STYLE>";
 else {
 print "<STYLE>body{background-color: blue;}</STYLE>";
 } 
-
-
-
-
