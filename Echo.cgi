@@ -21,7 +21,7 @@ body {background-color: $color;}
 </HEAD>
 
 <BODY>
-<H2>Hello $first $last from a Web app written in CGI with Perl on data time\n</H2>
+<H2>Hello $first $last from a Web app written in CGI with Perl on $localtime\n</H2>
 </BODY>
 
 </HTML>

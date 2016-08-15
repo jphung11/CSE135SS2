@@ -9,7 +9,7 @@ body {background-color: <?php echo $_GET["color"]; ?>}
 </HEAD>
 
 <BODY>
-<H2>Hello <?php echo $_GET["first"]; ?> <?php echo $_GET["last"]; ?> from a Web app written with PHP on data time</H2>
+<H2>Hello <?php echo $_GET["first"]; ?> <?php echo $_GET["last"]; ?> from a Web app written with PHP on <?php echo date(DATE_RFC822) ?></H2>
 </BODY>
 
 </HTML>
