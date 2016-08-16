@@ -16,7 +16,7 @@
 
 $cookie_name = "DA_BEST_COOKIE_EVA";
 session_start();
-if (count($_COOKIE) > 0) {
+if ($_COOKIE[$cookie_name]) {
 	echo "<h1>Hi " . $_COOKIE[$cookie_name] . " nice to meet you</h1>";
 }
 else {
