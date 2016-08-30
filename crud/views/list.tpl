@@ -18,8 +18,8 @@
     		"aLengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
         	"pageLength": 25,
         	"bSort": true,
-            "bFilter": false,
-            "bInfo": false
+            "bFilter": false
+            
     	});
 
 	} );
