@@ -48,7 +48,8 @@
 	    print "<td>". strip_tags($movies[$i]['title'])   . "</td>" ;
 	    print "<td>". strip_tags($movies[$i]['studio'])    . "</td>" ;
 	    print "<td>". strip_tags($movies[$i]['year'])        . "</td>" ;
-	    print "<td>". strip_tags($movies[$i]['box_office_money'])     . "</td>" ;
+        setlocale(LC_MONETARY, 'en_US.UTF-8');
+	    print "<td>". money_format('$%!i', strip_tags($movies[$i]['box_office_money']))     . "</td>" ;
 	    
 	    print "<td><img src='". strip_tags($movies[$i]['picture'])     . "''></td>" ;
 
