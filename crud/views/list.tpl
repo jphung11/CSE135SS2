@@ -33,7 +33,7 @@
 <h1>Movies</h1>
 	
 <table id="movies_table" class="table table-striped">
-<thead><tr><th>Title</th><th>Studio</th><th>Year</th><th>Box Office Money</th><th>Picture</th><th>Edit/Delete</th></tr></thead>
+<thead><tr><th>Title</th><th>Studio</th><th>Year</th><th>Box Office $</th><th>Picture</th><th>Edit/Delete</th></tr></thead>
 <?php
    if (count($movies) == 0) {
 ?>
