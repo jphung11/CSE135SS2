@@ -30,7 +30,7 @@ print << "EOF";
 <BODY>
 <H1>$output_msg</H1>
 <a href="sessionpage1_CGI.html">Back to page one</a><br>
-<a href="delete_session_cgi.cgi">Clear Session</a>
+<a href="delete_session_cgi">Clear Session</a>
 </BODY>
 
 </HTML>
