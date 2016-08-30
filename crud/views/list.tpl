@@ -17,7 +17,9 @@
     	$('#movies_table').DataTable({
     		"aLengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
         	"pageLength": 25,
-        	"bSort": true
+        	"bSort": true,
+            "bFilter": false,
+            "bInfo": false
     	});
 
 	} );
