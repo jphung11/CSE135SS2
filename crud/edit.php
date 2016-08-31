@@ -15,6 +15,11 @@
  if ($action == "Update") {
    
     $movie_id = $_POST['movie_id'];
+
+    if(!is_numeric($movie_id)) {
+    	header('Location: index.php');
+    	exit();
+    }
          
     $sql = "SELECT * FROM movies where movie_id = ".$movie_id;
     $result = mysqli_query($conn, $sql);
