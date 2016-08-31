@@ -1,6 +1,7 @@
 <?php
 	
 	require_once 'config.inc';
+	require_once 'configpdo.inc';
 	
 
 	$action = $_REQUEST['action'];
@@ -13,17 +14,9 @@
    	$box_office_money = strip_tags($_REQUEST['box_office_money']);
    	$picture = strip_tags($_REQUEST['picture']);
    	$movie_id = $_REQUEST['movie_id'];
-   	$valid = 1;
 	
 
 	try {
-
-		$dbhost = '127.0.0.1';
-		$dbname = 'movies';
-		$dbusers = 'cowsarebae';
-		$dbpass = 'cowsarecool';
-		$pdo = new PDO("mysql:host=$dbhost;port=3306;dbname=$dbname",$dbusers,$dbpass);
-		$pdo ->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
 
 		$addstr = "insert into movies (title,studio,year,box_office_money,picture) values (:title, :studio, :year, :box_office_money, :picture)";
 		$updatestr = "update movies set title=:title, studio=:studio, year=:year, box_office_money=:box_office_money, picture=:picture where movie_id=:movie_id";
@@ -42,19 +35,13 @@
 
 	   	// SHOULD HAVE VALIDATION HERE!?
 
-		   	if (!is_int($year) || !is_int($box_office_money)) {
-		   		header('Location: index.php');
-		   		$valid = 0;
+		   	if (!is_numeric($year) || !is_numeric($box_office_money)) {
+		   		print "<script type='text/javascript'>alert('Invalid request. Returned to list.');document.location='index.php';</script>";
+		   		exit();
 		   	}
 
-		   	if ($valid) {
-				$stmt->execute();
-			}
-		   
-		   /*
-		   $sql = "INSERT INTO movies (title,studio,year,box_office_money,picture) VALUES ('$title' , '$studio' , '$year' , '$box_office_money', '$picture')";
-		   $result = mysqli_query($conn, $sql);
-		   */
+
+			$stmt->execute();
 		
 		} else if ($action == "Update") {
 			
@@ -65,54 +52,39 @@
 			$stmt->bindParam(':year', $year);
 			$stmt->bindParam(':box_office_money', $box_office_money);
 			$stmt->bindParam(':picture', $picture);
-			if (!is_numeric($movie_id)) {
-		   		header('Location: index.php');
-		   		$valid = 0;
-		   	}
 			$stmt->bindParam(':movie_id', $movie_id);
        
 
 		   	// SHOULD HAVE VALIDATION HERE!?
 
-		   	if (!is_int($year) || !is_int($box_office_money)) {
-		   		header('Location: index.php');
-		   		$valid = 0;
+		   	if (!is_numeric($year) || !is_numeric($box_office_money) || !is_numeric($movie_id)) {
+		   		print "<script type='text/javascript'>alert('Invalid request. Returned to list.');document.location='index.php';</script>";
+		   		exit();
 		   	}
 
+			$stmt->execute();
 		   	
-		   	if ($valid) {
-				$stmt->execute();
-		   	}
-			/*
-		   $sql = "UPDATE movies SET title='" .$title."' ,studio='".$studio."' ,year='".$year."' ,box_office_money='".$box_office_money."' ,picture='".$picture."' WHERE movie_id='".$movie_id."'";
-	       $result = mysqli_query($conn, $sql);
-			*/
 		}  
 
 		else if ($action == "Delete") {
 
 		   $stmt = $pdo->prepare($deletestr);
 		   if (!is_numeric($movie_id)) {
-		   		header('Location: index.php');
-		   		$valid = 0;
+			if (!is_numeric($movie_id)) {
+		   		print "<script type='text/javascript'>alert('Invalid request. Returned to list.');document.location='index.php';</script>";
+		   		exit();
+		   	}
 		   }
 		   $stmt -> bindParam(':movie_id',$movie_id);
 
-		   if ($valid) {
-				$stmt->execute();
-		   	}
-	       
-	       /*$sql = "DELETE FROM movies WHERE movie_id='".$_POST['movie_id']."'"; 
-	       $result = mysqli_query($conn, $sql);
-	       */	
-	       header('Location: index.php');
+			$stmt->execute();
+		   	
 		}
 
 		header('Location: index.php');
 
 	}
 
-	
 	catch(PDOException $e) {
     	echo "Error: " . $e->getMessage();
     }

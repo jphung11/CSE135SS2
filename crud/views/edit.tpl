@@ -16,27 +16,27 @@
 <form action="action" method="POST" class="form">
 	<div class="form-group">
 	 <label for="title">Title</label>
-	 <input type="text" name="title" value="<?= $title ?>"  class="form-control">
+	 <input type="text" id="title" name="title" value="<?= $title ?>"  class="form-control">
 	</div>
 
 	<div class="form-group">
 	<label for="studio">Studio</label>
-	<input type="text" name="studio" value="<?= $studio ?>"  class="form-control">
+	<input type="text" id="studio" name="studio" value="<?= $studio ?>"  class="form-control">
 	</div>
 
 	<div class="form-group">
 	<label for="year">Year</label>
-	<input type="number" name="year" value="<?= $year ?>"  class="form-control">
+	<input type="number" id="year" name="year" value="<?= $year ?>"  class="form-control">
 	</div>
 
 	<div class="form-group">
 	<label for="box_office_money">Box Office $ (Enter number only)</label>
-	<input type="number" name="box_office_money" value="<?= $box_office_money ?>"  class="form-control">
+	<input type="number" id="box_office_money" name="box_office_money" value="<?= $box_office_money ?>"  class="form-control">
 	</div>
 
 	<div class="form-group">
 	<label for="picture">Picture URL</label>
-	<input type="text" name="picture" value="<?= $picture ?>"  class="form-control">
+	<input type="text" id="picture" name="picture" value="<?= $picture ?>"  class="form-control">
 	</div>
 
 	<input type="hidden" name="movie_id" value="<?= $movie_id ?>">

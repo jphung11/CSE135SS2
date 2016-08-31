@@ -9,4 +9,5 @@
         if (!$pdo) {
             die("Connection failed");
         }
+
 ?>
