@@ -18,6 +18,7 @@
 
     if(!is_numeric($movie_id)) {
     	header('Location: index.php');
+    	print "<script>alert("Invalid request. Returned to list.")</script>";
     	exit();
     }
          
