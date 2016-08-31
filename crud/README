@@ -1,0 +1,38 @@
+CSE 135 Homework 3
+
+URL: http://138.68.48.65/
+
+Website Authentification: 
+Username: teamyay
+Password: cowsarecool
+
+To find out how to check our hw3 app, go to the quick grader info. To read a discussion explaining the app, proceed to the Discussion explaining app section.
+
+Discussion explaining app:
+Our app is a crud app that allows you to create, read, update, and delete records of movies. Each record of a movie will include a title, the studio produced it, the year it was released, the money it made, and a picture to describe the movie. The app uses sorting and pagination so that the table view of the database on our app is customizable and user friendly. The app will not allow sql injections, cross-scripting, and duplicate entries. Our app uses PDO, strip tags, and is_numeric checks to make sure that the data being entered into our movies database is okay. By using bootstrap and dataTables, we created a clean looking app where you can easily look at the movie records our database has available.
+
+Quick grader info:
+To check our homework 3 app, simply go to http://138.68.48.65/crud
+
+- list view (10 pts): Once you arrived, you can check the list view by observing the given table. Our table stores the database information that is required. This includes the core (Movie Title, Studio, Year, and Box Office $) and the image (the poster/picture). To test the sort, simply click the column headers (Title, Studio, Year, Box Office $). By clicking Title or Studio, notice that the rows are not organized in either ascending or descending alphabetical order. The organization toggles back and forth between ascending and descending each time you click it. If you were to click Year and Box Office $, notice that the rows are now sorted in either ascending or descending numerical order. Like the Title and Studio, the way it sorts the data is based on a toggle. To test pagination, notice that you can select the amount of entries you want to show on the top with a drop down selector. Select 10 on top, and notice that 10 entries are shown. Also notice that the amount of pages reflect how many pages there are now due to the number of entries we want to show. As required, we support showing 5, 10, 20, and all entries. Now that you have tested showing 10 entries, feel free to check showing 5, 20, or even all entries and observe the changes for the pages. For the style of our list view, we had a very clean look due to use of bootstrap.
+
+- add record (5 pts): To test add record, scroll down the table and click the add button. This will bring you to a form where you can add in a new movie record. Feel free to add any movie of your liking. To add a picture, simply enter a remote URL of the movie picture or a local url of a picture we put on our server for testing. The movie pictures we included for you to use are:
+        - secretlifeofpets.jpg
+        - thehungergames.jpg
+        - manofsteel.jpg
+        - gravity.jpg
+        - bighero6.jpg
+If you were to add a movie from our database, simply enter ./picturefilename.jpg into the input for the picture. For example, if I wanted to added a picture of the movie "The Man of Steel," I would put ./manofsteel.jpg into the form input.
+Once you are done filling out the form, click add. Notice that a new row is now entered by seeing that there is one more entry. Feel free to look for the movie you just added.
+
+- update record (5 pts): To test update record, feel free to edit any row of the table. Simply click the pencil icon at the end of the row for the record you would like to edit. After clicking the pencil icon, you will be brought to a form with the form inputs pre-filled with the data we had. You will be allowed to change any of the inputs for that record. To check this, make a change to any of the inputs and click the update button. Notice that once you're brought back to the table that the data row is now updated with the change you made.
+
+- delete record (5 pts): To test delete record, feel free to click the trashcan icon at the end of the row for any record. By doing so, you will be brought to a confirmation page. Click delete to remove the record or cancel if this is not the one you wanted to remove. If you click delete at the confirmation page, observe that the table now holds one less entry and that the record you wanted to delete is gone.
+
+- data validation (5 pts): To check our data validation, you may try to click inspect on our page and change the Year and/or Box Office $ input type as text and enter in text. If you tried to add/update such an invalid input, you will be given an alert about an invalid request because what was entered was not a number. In addition, as a part of our data validation, feel free to enter in script into our form inputs. For example, enter <script>alert(1)</script> or <<<<script>>>>alert(1)<<<</script>>>> into title. The script will not run and therefore our data validation for the input worked. In addition, as a another part of data validation, we made sure to prevent sql injections. If you were to enter something like "; --drop table movies; " into title, the table will not be dropped which you can see by seeing how the table still consists of data. You can see the hack attempt at the record that you tried to conduct an sql injection but the attempt at an sql injection itself failed. Thus data validation was properly conducted.
+
+- database organization and set-up (5 pts): To check for database organization and set-up, you can already see that a database exists and is working by observing the table. For the database organization and set-up, we set up the database to hold a movie_id of unsigned mediumint type, a title to hold a varchar type, a studio of varchar type, year and box_office_money to hold int type, and picture to hold varchar type. All the fields in our database are not allowed to take a Null. As a part of the database set-up, we made it so that the database will not take any duplicates. So feel free to add another Avatar entry with your own values for Year and Box Office $. Notice that your entry wasn't made because Avatar already exists. 
+
+- code quality and organization (5 pts): We made sure to separate the code that deals with the database and the code that deals with the views (template). We followed the organization that the Professor gave as examples in his crud demos.
+
+- visual execution markup and CSS (5 pts): For visual execution markup and CSS, we made sure to use HTML5 valid markup. We validated our app by inputting the source code of our webapp into the validator https://validator.w3.org/nu/ . To do this, view the page source of our main crud app page with the table and copy and paste that source code into the validator. Feel free to do this with our updatepage, add page, and delete confirmation page as well. All of the pages will be shown to have no errors and pass the validator. As for the CSS, we linked our code to use bootstap.
